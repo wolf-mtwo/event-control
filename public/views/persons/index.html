@@ -1,0 +1,21 @@
+<div ng-init="loadPersons()">
+  <div>
+    <ul>
+      <li ng-repeat="person in persons">
+        {{person.name}}
+        {{person.email}}
+        {{person.cel}}
+        {{person.ci}}
+        {{person.address}}
+        <a ng-click="remove(person, $index)">delete</a>
+      </li>
+    </ul>
+  </div>
+
+  <button ui-sref="home.persons.create">Create new person</button>
+
+  <div ui-view>
+
+  </div>
+
+</div>
