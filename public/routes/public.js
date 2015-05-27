@@ -2,19 +2,17 @@
 
 angular.module('seedApp')
 .config(['$urlRouterProvider', '$stateProvider',
-  function($urlRouterProvider, $stateProvider) {
-
-    var path = './public/views/contact';
-
-    $stateProvider.state('home.contact', {
-      url: 'contact',
-      templateUrl: path + '/contact.html',
-      controller: 'ContactController'
-    });
-    $stateProvider.state('home.about', {
-      url: 'about',
-      templateUrl: path + '/about.html',
-      controller: 'ContactController'
-    });
-  }
+function($urlRouterProvider, $stateProvider) {
+  var path = './public/views/';
+  $stateProvider.state('home.contact', {
+    url: 'contact',
+    templateUrl: path + 'contact/contact.html',
+    controller: 'ContactController'
+  });
+  $stateProvider.state('home.login', {
+    url: 'login',
+    templateUrl: path + 'session/login.html',
+    controller: 'ContactController'
+  });
+}
 ]);

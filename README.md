@@ -1,8 +1,8 @@
-event-control
+#event-control
 
 ## Crear la base de datos
-* crear la basedatos **events**
-* ejecutar el siguiente escript:
+* crear la base de datos **events**
+* ejecutar el siguiente SQL Script:
 ```
 # exec config/DB.md
 ```

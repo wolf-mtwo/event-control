@@ -19,14 +19,16 @@
 		<script src="./public/app.js"></script>
 		<script src="./public/routes/home.js"></script>
 		<script src="./public/routes/public.js"></script>
-		<script src="./public/routes/demo.js"></script>
+		<script src="./public/routes/session.js"></script>
 
 		<script src="./public/services/persons.js"></script>
+		<script src="./public/services/roles.js"></script>
+		<script src="./public/services/sessions.js"></script>
 
 		<script src="./public/controllers/main.js"></script>
 		<script src="./public/controllers/home.js"></script>
 		<script src="./public/controllers/contact.js"></script>
-		<script src="./public/controllers/demo/persons.js"></script>
+		<script src="./public/controllers/session/sessions.js"></script>
 
 	</head>
 
