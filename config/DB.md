@@ -1,12 +1,47 @@
-```
-CREATE TABLE person(
-    id    INT                     AUTO_INCREMENT,
-    name         NATIONAL VARCHAR(50),
-    email        NATIONAL VARCHAR(30),
-    cel          NATIONAL VARCHAR(10),
-    ci           NATIONAL VARCHAR(15),
-    address      NATIONAL VARCHAR(50),
-    PRIMARY KEY (id)
-)ENGINE=MYISAM
-;
-```
+======== user
+email
+password
+first_name
+last_name
+cel
+======== event
+id
+userId
+title
+active (true false)
+start_date
+end_date
+======== role_map
+id
+userId
+eventId
+administrador
+staff
+======== talk
+id
+userId
+eventId
+title
+start_date
+end_date
+======== participant
+id
+userId
+eventId
+name
+first_name
+last_name
+email
+cel
+ci
+address
+======== att
+id
+eventId
+userId
+talkId
+stateId
+======== state
+id
+color
+name

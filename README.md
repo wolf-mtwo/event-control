@@ -1,17 +1,45 @@
-PHP Demo
+event-control
 
-## create initial demo person
-* create a database named **demo**
-* create a table named **person**
+## Crear la base de datos
+* crear la basedatos **events**
+* ejecutar el siguiente escript:
 ```
-# copy from here the person table
-# config/DB.md
+# exec config/DB.md
 ```
 
-## update database access config
-```
-# aplication/config/database.php
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'usbw';
-$db['default']['database'] = 'demo';
-```
+## Accesos sysadmin
+> user: wolf
+> pass: wolf
+
+## Roles
+
+* Sysadmin
+* usuario
+* Administrador
+* staff
+* participante
+
+### Historias de usuario:
+
+- crear usuarios (cualquiera puede ser usuarios)
+- create un evento
+- editar datos personales
+- administrador
+  - registrar charlas
+  - editar charlas
+  - eliminar charlas
+  - añadir staff
+  - añadir participante
+    - añadir parcipante con fotos
+    - recolectar los siguiente datos
+      - name **requerido**
+      - cel
+      - email
+      - ci
+      - address
+- staff
+  - llamar lista
+  - llamar lista de forma alfabetica
+  - agregar parcipante
+- reportes
+  - total de participante por evento

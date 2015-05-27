@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
-		<title>PHP Seed</title>
+		<title>Events</title>
 
 		<script src="./public/bower_components/angular/angular.js"></script>
 		<script src="./public/bower_components/jquery/dist/holder.js"></script>
