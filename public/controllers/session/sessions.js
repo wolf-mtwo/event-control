@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('seedApp')
-.controller('SessionsController', ['$scope', '$state', 'Roles', 'Users',
-  function($scope, $state, Roles, Users) {
+.controller('SessionsController', ['$scope', '$state', 'Roles', 'Users', 'Store',
+  function($scope, $state, Roles, Users, Store) {
 
     $scope.item = {
       email: 'wolf',
@@ -12,6 +12,7 @@ angular.module('seedApp')
     $scope.login = function(item) {
       Roles.login(item, function(response) {
         console.log(response);
+        Store.save('session', response);
         $state.go('events');
       });
     }

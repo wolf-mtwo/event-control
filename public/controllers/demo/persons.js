@@ -7,7 +7,6 @@ angular.module('seedApp')
     // constants
     $scope.persons = [];
 
-
     // Loads all created persons
     $scope.loadPersons = function() {
       Persons.query({}, function(response) {
