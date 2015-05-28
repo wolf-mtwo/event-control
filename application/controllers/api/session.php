@@ -10,7 +10,7 @@ class Session extends REST_Controller
     parent::__construct();
     session_start();
     $this->load->database();
-    $this->load->model('users');
+    $this->load->model('user');
   }
 
   function login_get()
@@ -22,7 +22,7 @@ class Session extends REST_Controller
   function login_post()
   {
     $session = (array)json_decode(file_get_contents("php://input"));
-    $user = $this->users->find($session);
+    $user = $this->user->find($session);
     $_SESSION['user'] = $user;
     $this->response($user, 200);
   }

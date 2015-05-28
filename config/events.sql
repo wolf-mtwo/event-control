@@ -48,8 +48,8 @@ CREATE TABLE IF NOT EXISTS `event` (
   `userId` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
   `active` tinyint(4) NOT NULL,
-  `start_date` date NOT NULL,
-  `end_date` date NOT NULL,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

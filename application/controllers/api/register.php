@@ -8,7 +8,7 @@ class Register extends Master_Controller
   {
     parent::__construct();
     $this->load->database();
-    $this->load->model('users');
+    $this->load->model('user');
   }
 
   // function users_get()
@@ -29,7 +29,7 @@ class Register extends Master_Controller
   {
     $input = (array)json_decode(file_get_contents("php://input"));
     $newPerson = $input;
-    $person = $this->users->save($newPerson);
+    $person = $this->user->save($newPerson);
     $this->response($person, 200);
   }
 }

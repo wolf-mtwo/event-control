@@ -20,9 +20,9 @@ class Master extends CI_Model {
   }
 
   // add new person
-  function save($person)
+  function save($item)
   {
-    $this->db->insert($this->tbl, $person);
+    $this->db->insert($this->tbl, $item);
     return $this->get_by_id($this->db->insert_id());
   }
 
@@ -31,10 +31,10 @@ class Master extends CI_Model {
     $this->db->where('id', $id);
     $item = $this->db->get($this->tbl)->row_array();
     // $item = $this->db->get_where('users',array('id'=>$id))->row_array();
-    if (count($item)) {
-      return $item;
+    if (!count($item)) {
+      return null;
     }
-    return null;
+    return $item;
   }
 
   function find($query)
