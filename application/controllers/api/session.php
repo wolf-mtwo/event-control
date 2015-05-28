@@ -8,36 +8,22 @@ class Session extends REST_Controller
   {
     // Construct our parent class
     parent::__construct();
+    session_start();
+    $this->load->database();
+    $this->load->model('users');
   }
 
+  function login_get()
+  {
+    $user = $_SESSION['user'];
+    $this->response($user, 200);
+  }
 
-
-  // function login_post()
-  // {
-  //   $user = array(array('email'=>'qwe@qwe.com', 'password'=>'123'));
-  //   print_r($user);
-  //   $input = (array)json_decode(file_get_contents("php://input"));
-  //   print_r($input);
-  //   // print_r($this->session);
-  //
-  //   $newdata = array(
-  //     'username'  => 'johndoe',
-  //     'email'     => 'johndoe@some-site.com',
-  //     'logged_in' => TRUE
-  //   );
-  //
-  //   $this->session->set_userdata($newdata);
-  //
-  //   // $persons = $this->personModel->get_paged_list(100)->result();
-  //   $persons = array('sss', 'sss');
-  //   $this->response($persons, 200);
-  // }
-  // //
-  // function person_post()
-  // {
-  //   $input = (array)json_decode(file_get_contents("php://input"));
-  //   // save
-  //   $person = $this->personModel->save($input);
-  //   $this->response($person, 200); // 200 being the HTTP response code
-  // }
+  function login_post()
+  {
+    $session = (array)json_decode(file_get_contents("php://input"));
+    $user = $this->users->find($session);
+    $_SESSION['user'] = $user;
+    $this->response($user, 200);
+  }
 }

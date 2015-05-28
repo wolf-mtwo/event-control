@@ -2,7 +2,7 @@
 
 require APPPATH.'/libraries/REST_Controller.php';
 
-class Master extends REST_Controller
+class Master_Controller extends REST_Controller
 {
   function __construct()
   {

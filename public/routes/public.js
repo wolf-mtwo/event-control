@@ -12,7 +12,17 @@ function($urlRouterProvider, $stateProvider) {
   $stateProvider.state('home.login', {
     url: 'login',
     templateUrl: path + 'session/login.html',
-    controller: 'ContactController'
+    controller: 'SessionsController'
+  });
+  $stateProvider.state('home.register', {
+    url: 'register',
+    templateUrl: path + 'session/register.html',
+    controller: 'SessionsController'
+  });
+  $stateProvider.state('home.forgot', {
+    url: 'forgot',
+    templateUrl: path + 'session/forgot.html',
+    controller: 'SessionsController'
   });
 }
 ]);

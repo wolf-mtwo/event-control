@@ -9,6 +9,10 @@ angular.module('seedApp').factory('Sessions', ['$resource',
         url: url + 'state',
         method: 'GET'
       },
+      login: {
+        // url: url + 'state',
+        method: 'POST'
+      },
       // delete: {
       //   url: url + 'id/:id',
       //   method: 'DELETE'

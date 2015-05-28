@@ -37,6 +37,18 @@ class Master extends CI_Model {
     return null;
   }
 
+  function find($query)
+  {
+    foreach ($query as $key => $value) {
+      $this->db->where($key, $value);
+    }
+    $item = $this->db->get($this->tbl)->row_array();
+    if (count($item)) {
+      return $item;
+    }
+    return null;
+  }
+
   function delete($id)
   {
     $item = $this->get_by_id($id);

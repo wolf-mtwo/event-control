@@ -2,7 +2,7 @@
 
 require APPPATH.'/controllers/api/generic/master.php';
 
-class Register extends Master
+class Register extends Master_Controller
 {
   function __construct()
   {
@@ -11,19 +11,19 @@ class Register extends Master
     $this->load->model('users');
   }
 
-  function users_get()
-  {
-    $id = $this->get('id');
-    if (!empty($id)) {
-      $person = $this->users->get_by_id($id);
-      if (empty($person)) {
-        $this->response(array('error' => 'Couldn\'t find any user!'), 404);
-      }
-      $this->response($person, 200);
-    }
-    $users = $this->users->get_all();
-    $this->response($users, 200);
-  }
+  // function users_get()
+  // {
+  //   $id = $this->get('id');
+  //   if (!empty($id)) {
+  //     $person = $this->users->get_by_id($id);
+  //     if (empty($person)) {
+  //       $this->response(array('error' => 'Couldn\'t find any user!'), 404);
+  //     }
+  //     $this->response($person, 200);
+  //   }
+  //   $users = $this->users->get_all();
+  //   $this->response($users, 200);
+  // }
 
   function users_post()
   {
