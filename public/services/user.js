@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('seedApp').factory('Persons', ['$resource',
+angular.module('seedApp').factory('User', ['$resource',
   function($resource) {
-    var url = './api/demo/persons/';
+    var url = './api/register/users/';
     return $resource(url, {
     }, {
       get: {

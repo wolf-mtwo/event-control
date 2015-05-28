@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('seedApp')
-.controller('SessionsController', ['$scope', '$state', 'Roles', 'Users', 'Store',
-  function($scope, $state, Roles, Users, Store) {
+.controller('SessionsController', ['$scope', '$state', 'Global', 'Session', 'User', 'Store',
+  function($scope, $state, Global, Session, User, Store) {
 
     $scope.item = {
       email: 'wolf',
@@ -10,18 +10,25 @@ angular.module('seedApp')
     };
 
     $scope.login = function(item) {
-      Roles.login(item, function(response) {
+      Session.login(item, function(response) {
         console.log(response);
-        Store.save('session', response);
-        $state.go('events');
+        $scope.changeToSessionMaster(response);
       });
     }
 
     $scope.register = function(item) {
-      Users.save(item, function(response) {
-        console.log(response);
+      User.save(item, function(response) {
+        $scope.changeToSessionMaster(reponse);
       });
     }
 
+    $scope.changeToSessionMaster = function(user) {
+      if (!user) {
+        throw new Error('user is undefined');
+      }
+      Store.save('session', user);
+      Global.user = user;
+      $state.go('events');
+    }
   }
 ]);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('seedApp').factory('Sessions', ['$resource',
+angular.module('seedApp').factory('Session', ['$resource',
   function($resource) {
     var url = './api/session/';
     return $resource(url + 'login', {
@@ -10,16 +10,8 @@ angular.module('seedApp').factory('Sessions', ['$resource',
         method: 'GET'
       },
       login: {
-        // url: url + 'state',
         method: 'POST'
-      },
-      // delete: {
-      //   url: url + 'id/:id',
-      //   method: 'DELETE'
-      // },
-      // update: {
-      //   method: 'PUT'
-      // }
+      }
     });
   }
 ]);
