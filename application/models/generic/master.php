@@ -32,12 +32,21 @@ class Master extends CI_Model {
     $item = $this->db->get($this->tbl)->row_array();
     // $item = $this->db->get_where('users',array('id'=>$id))->row_array();
     if (!count($item)) {
-      return null;
+      throw new Exception('item does not exist');
     }
     return $item;
   }
 
   function find($query)
+  {
+    foreach ($query as $key => $value) {
+      $this->db->where($key, $value);
+    }
+    $item = $this->db->get($this->tbl)->result_array();
+    return $item;
+  }
+
+  function find_one($query)
   {
     foreach ($query as $key => $value) {
       $this->db->where($key, $value);
@@ -52,11 +61,11 @@ class Master extends CI_Model {
   function delete($id)
   {
     $item = $this->get_by_id($id);
-    if (!is_null($item)) {
-      $this->db->where('id', $id);
-      $this->db->delete($this->tbl);
-      return $item;
+    if (empty($item)) {
+      throw new Exception('id is undefined');
     }
-    return null;
+    $this->db->where('id', $id);
+    $this->db->delete($this->tbl);
+    return $item;
   }
 }

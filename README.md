@@ -43,3 +43,20 @@
   - agregar parcipante
 - reportes
   - total de participante por evento
+
+
+## API docs
+```
+/api/events/event/ POST | GET
+/api/events/event/id/:eventId GET
+/api/events/event/id/:eventId DELETE
+
+/api/events/talk/id/:eventId GET | POST
+/api/events/talk/id/:eventId/talk/:talkId GET | POST
+/api/events/talk/id/:eventId/talk/:talkId DELETE
+
+/api/events/participant/id/:eventId GET
+/api/events/participant/id/:eventId POST
+/api/events/participant/id/:eventId DELETE
+
+```

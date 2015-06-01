@@ -2,11 +2,11 @@
 
 require_once APPPATH . '/models/generic/master.php';
 
-class Event extends Master {
+class Talk extends Master {
 
   function __construct()
   {
     // Construct our parent class
-    parent::__construct('event');
+    parent::__construct('talk');
   }
 }

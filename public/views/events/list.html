@@ -1,0 +1,10 @@
+<div class="container" ng-init="loadEvents()">
+  <div ng-repeat="event in events">
+    <div>
+      {{event.id}}
+      {{event.title}}
+      {{event.userId}}
+      <a ui-sref="events.detail({id: event.id})">load</a>
+    </div>
+  </div>
+</div> <!-- /container -->

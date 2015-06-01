@@ -21,9 +21,21 @@ function($urlRouterProvider, $stateProvider) {
     url: '/events',
     templateUrl: path + '/index.html',
     controller: 'EventsController',
-    resolve:{
-      init: validateSession
-    }
+    // resolve:{
+    //   init: validateSession
+    // }
+  });
+
+  $stateProvider.state('events.list', {
+    url: '/list',
+    templateUrl: path + '/list.html',
+    controller: 'DetailController'
+  });
+
+  $stateProvider.state('events.detail', {
+    url: '/:id',
+    templateUrl: path + '/detail.html',
+    controller: 'DetailController'
   });
 }
 ]);

@@ -22,7 +22,7 @@ class Session extends REST_Controller
   function login_post()
   {
     $session = (array)json_decode(file_get_contents("php://input"));
-    $user = $this->user->find($session);
+    $user = $this->user->find_one($session);
     $_SESSION['user'] = $user;
     $this->response($user, 200);
   }

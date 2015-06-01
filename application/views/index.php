@@ -25,11 +25,13 @@
 		<script src="./public/services/store.js"></script>
 		<script src="./public/services/session.js"></script>
 		<script src="./public/services/user.js"></script>
+		<script src="./public/services/event.js"></script>
 
 		<script src="./public/controllers/home.js"></script>
 		<script src="./public/controllers/contact.js"></script>
 		<script src="./public/controllers/session/sessions.js"></script>
 		<script src="./public/controllers/events/events.js"></script>
+		<script src="./public/controllers/events/detail.js"></script>
 
 	</head>
 

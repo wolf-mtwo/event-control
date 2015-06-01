@@ -19,9 +19,9 @@ angular.module('seedApp')
       url: '/',
       templateUrl: path + '/index.html',
       controller: 'HomeController',
-      resolve: {
-        init: validateSession
-      }
+      // resolve: {
+      //   init: validateSession
+      // }
     });
 
     $urlRouterProvider.otherwise('/');
