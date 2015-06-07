@@ -32,6 +32,12 @@ function($urlRouterProvider, $stateProvider) {
     controller: 'DetailController'
   });
 
+  $stateProvider.state('events.create', {
+    url: '/create',
+    templateUrl: path + '/create.html',
+    controller: 'EventCreateController'
+  });
+
   $stateProvider.state('events.detail', {
     url: '/:id',
     templateUrl: path + '/detail.html',

@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('seedApp', [
-  'ngResource',
   'ngRoute',
   'ui.router',
+  'ngResource',
+  'ngFileUpload',
   'LocalStorageModule'
 ]).config(function (localStorageServiceProvider) {
   localStorageServiceProvider.setPrefix('events');

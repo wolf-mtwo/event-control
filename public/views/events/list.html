@@ -1,4 +1,7 @@
 <div class="container" ng-init="loadEvents()">
+  <div>
+    <a ui-sref="events.create">create</a>
+  </div>
   <div ng-repeat="event in events">
     <div>
       {{event.id}}

@@ -12,6 +12,7 @@
 		<script src="./public/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<script src="./public/bower_components/jquery/dist/jquery.js"></script>
 		<script src="./public/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+		<script src="./public/bower_components/ng-file-upload/ng-file-upload.js"></script>
 
 		<link rel="stylesheet" href="./public/assets/css/style.css">
 		<link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
@@ -32,6 +33,7 @@
 		<script src="./public/controllers/session/sessions.js"></script>
 		<script src="./public/controllers/events/events.js"></script>
 		<script src="./public/controllers/events/detail.js"></script>
+		<script src="./public/controllers/events/create.js"></script>
 
 	</head>
 

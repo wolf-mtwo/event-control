@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
+  `image` varchar(100) NOT NULL,
   `active` tinyint(4) NOT NULL,
   `start_date` datetime NOT NULL,
   `end_date` datetime NOT NULL,
