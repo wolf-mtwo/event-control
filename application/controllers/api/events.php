@@ -26,8 +26,7 @@ class Events extends Master_Controller
 
   function event_post()
   {
-    $event = $this->save_model('event');
-    $this->response($event, 200);
+    $this->save_model('event');
   }
 
   function event_delete()

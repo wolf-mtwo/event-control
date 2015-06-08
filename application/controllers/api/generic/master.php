@@ -22,7 +22,7 @@ class Master_Controller extends REST_Controller
     }
   }
 
-  function save_model($model, $params)
+  function save_model($model, $params = array())
   {
     try {
       $this->validator($model, 'model');
@@ -45,9 +45,11 @@ class Master_Controller extends REST_Controller
 
   private function validator($var, $value)
   {
-    if (empty($var)) {
-      throw new Exception("$value is undefined");
-    }
+    // if (empty($var)) {
+    //   if (isset($var)) {
+    //     throw new Exception("$value is undefined");
+    //   }
+    // }
   }
 
   function remove_model($model)
