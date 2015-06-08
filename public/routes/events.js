@@ -43,5 +43,29 @@ function($urlRouterProvider, $stateProvider) {
     templateUrl: path + '/detail.html',
     controller: 'DetailController'
   });
+
+  $stateProvider.state('events.detail.participants', {
+    url: '/participants',
+    templateUrl: path + '/participants/index.html',
+    controller: 'ParticipantsController'
+  });
+
+  $stateProvider.state('events.detail.participants.create', {
+    url: '/create',
+    templateUrl: path + '/participants/create.html',
+    controller: 'ParticipantsController'
+  });
+
+  $stateProvider.state('events.detail.talks', {
+    url: '/talks',
+    templateUrl: path + '/talks/list.html',
+    controller: 'TalksController'
+  });
+
+  $stateProvider.state('events.detail.talks.create', {
+    url: '/create',
+    templateUrl: path + '/talks/create.html',
+    controller: 'TalksController'
+  });
 }
 ]);

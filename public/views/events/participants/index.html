@@ -1,0 +1,17 @@
+Participantes
+
+<ul ng-init="loadParticipants()">
+	<li ng-repeat="participant in participants">
+		{{participant.first_name}}
+		{{participant.last_name}}
+		{{participant.cel}}
+		{{participant.ci}}
+		{{participant.address}}
+		{{participant.email}}
+		<a ui-sref="participant.detail">talk detail</a>
+	</li>
+</ul>
+
+<div ui-view>
+
+</div>

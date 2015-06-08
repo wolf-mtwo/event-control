@@ -46,9 +46,7 @@ class Master_Controller extends REST_Controller
   private function validator($var, $value)
   {
     // if (empty($var)) {
-    //   if (isset($var)) {
-    //     throw new Exception("$value is undefined");
-    //   }
+    //   throw new Exception("$value is undefined");
     // }
   }
 

@@ -27,6 +27,8 @@
 		<script src="./public/services/session.js"></script>
 		<script src="./public/services/user.js"></script>
 		<script src="./public/services/event.js"></script>
+		<script src="./public/services/talks.js"></script>
+		<script src="./public/services/participants.js"></script>
 
 		<script src="./public/controllers/home.js"></script>
 		<script src="./public/controllers/contact.js"></script>
@@ -34,6 +36,8 @@
 		<script src="./public/controllers/events/events.js"></script>
 		<script src="./public/controllers/events/detail.js"></script>
 		<script src="./public/controllers/events/create.js"></script>
+		<script src="./public/controllers/events/talks.js"></script>
+		<script src="./public/controllers/events/participants.js"></script>
 
 	</head>
 

@@ -9,6 +9,8 @@ angular.module('seedApp')
   function($scope, $state, Global, Event) {
     $scope.event = {};
     $scope.events = [];
+    $scope.talks = [];
+    $scope.participants = [];
 
     $scope.loadEvents = function() {
       Event.query({}, function(reponse) {

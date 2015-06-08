@@ -9,6 +9,7 @@ class Events extends Master_Controller
     parent::__construct();
     $this->load->database();
     $this->load->model('event');
+    $this->load->model('participant');
     $this->load->model('talk');
   }
 
@@ -31,7 +32,7 @@ class Events extends Master_Controller
 
   function event_delete()
   {
-    $event = $this->remove_model('event');
+    $this->remove_model('event');
   }
 
   // TALKS
@@ -48,5 +49,21 @@ class Events extends Master_Controller
   {
     $params = array('eventId');
     $this->save_model('talk', $params);
+  }
+
+  // PARTICIPANTS
+  function participant_get()
+  {
+    if($this->get('participantId')) {
+      $this->load_model('participant', 'participantId');
+    }
+    $params = array('eventId');
+    $this->get_all_model('participant', $params);
+  }
+
+  function participant_post()
+  {
+    $params = array('eventId');
+    $this->save_model('participant', $params);
   }
 }
