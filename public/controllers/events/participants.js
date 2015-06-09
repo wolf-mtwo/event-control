@@ -6,7 +6,15 @@ angular.module('seedApp')
   'Global',
   'Store',
   'Participants',
-  function($scope, $state, Global, Store, Participants) {
+  'Upload',
+  function($scope, $state, Global, Store, Participants, Upload) {
+
+    $scope.logs = [];
+    $scope.item = {
+      image: null,
+      'first_name': 'Lorem',
+      'last_name': 'ipsum Arcu'
+    };
 
     $scope.loadParticipants = function() {
       var itemParams = {
@@ -26,11 +34,6 @@ angular.module('seedApp')
         $scope.participants.push(response);
       });
     }
-
-    $scope.logs = [];
-    $scope.item = {
-      image: null
-    };
 
     $scope.upload = function(files) {
       var count = 0;

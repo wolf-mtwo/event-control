@@ -1,11 +1,18 @@
-<form ng-submit="create(item)">
-  <div class="form-group">
-    <label>Titulo</label>
-    <input type="text"
-    class="form-control"
-    ng-model="item.title"
-    placeholder="titulo">
-  </div>
-  <button type="submit" class="btn btn-default">crear charla</button>
-  <button class="btn btn-default" ui-sref="home">Cancelar</button>
-</form>
+<style type="text/css">
+  .space-create {
+    padding-bottom: 10px;
+  }
+</style>
+<div class="space-create">
+  <form ng-submit="create(item)">
+    <div class="form-group">
+      <label>Titulo</label>
+      <input type="text"
+      class="form-control"
+      ng-model="item.title"
+      placeholder="titulo">
+    </div>
+    <button type="submit" class="btn btn-default">crear charla</button>
+    <button class="btn btn-default" ui-sref="events.detail.talks">Cancelar</button>
+  </form>
+</div>
