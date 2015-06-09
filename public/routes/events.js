@@ -56,6 +56,12 @@ function($urlRouterProvider, $stateProvider) {
     controller: 'ParticipantsController'
   });
 
+  $stateProvider.state('events.detail.participantsdetail', {
+    url: '/participants/:participantId',
+    templateUrl: path + '/participants/detail.html',
+    controller: 'ParticipantsController'
+  });
+
   $stateProvider.state('events.detail.talks', {
     url: '/talks',
     templateUrl: path + '/talks/list.html',
@@ -65,6 +71,12 @@ function($urlRouterProvider, $stateProvider) {
   $stateProvider.state('events.detail.talks.create', {
     url: '/create',
     templateUrl: path + '/talks/create.html',
+    controller: 'TalksController'
+  });
+
+  $stateProvider.state('events.detail.talksdetail', {
+    url: '/talks/:talkId',
+    templateUrl: path + '/talks/detail.html',
     controller: 'TalksController'
   });
 }

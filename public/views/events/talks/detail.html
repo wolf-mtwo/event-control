@@ -1,0 +1,11 @@
+<div class="row" ng-init="loadTalk()">
+  <h3>{{talk.title}}</h3>
+  <div>
+    <button class="btn btn-info" ui-sref="events.detail.participants">
+      Actualizar
+    </button>
+    <button class="btn btn-danger" ng-click="remove(talk)">
+      Eliminar
+    </button>
+    </div>
+</div>

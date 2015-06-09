@@ -35,7 +35,9 @@
           {{participant.last_name}}
         </p>
         <p>
-          <a href="#" class="btn btn-primary" role="button">
+          <a ui-sref="events.detail.participantsdetail({participantId: participant.id})"
+            class="btn btn-primary"
+            role="button">
             Detalle
           </a>
         </p>

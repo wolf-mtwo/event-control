@@ -89,4 +89,15 @@ class Master_Controller extends REST_Controller
     }
     return $newItem;
   }
+
+  function remove($model, $param = 'id')
+  {
+    try {
+      $id = $this->get($param);
+      $item = $this->$model->delete($id);
+      $this->response($item, 200);
+    } catch (Exception $e) {
+      $this->response(array("error" => $e->getMessage()), 404);
+    }
+  }
 }

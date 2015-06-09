@@ -10,6 +10,7 @@ angular.module('seedApp')
   function($scope, $state, Global, Store, Participants, Upload) {
 
     $scope.logs = [];
+    $scope.participant = {};
     $scope.item = {
       image: null,
       'first_name': 'Lorem',
@@ -22,7 +23,17 @@ angular.module('seedApp')
       };
       Participants.query(itemParams, function(response) {
         $scope.participants = response;
-      }); 
+      });
+    }
+
+    $scope.loadParticipant = function() {
+      var itemParams = {
+        eventId: $state.params.id,
+        participantId: $state.params.participantId
+      };
+      Participants.get(itemParams, function(response) {
+        $scope.participant = response;
+      });
     }
 
     $scope.create = function(item) {
@@ -30,8 +41,19 @@ angular.module('seedApp')
         eventId: $state.params.id
       };
       Participants.save(itemParams, item, function(response) {
-      	console.log(response);
+        console.log(response);
         $scope.participants.push(response);
+      });
+    }
+
+    $scope.remove = function(item) {
+      var itemParams = {
+        eventId: $state.params.id,
+        id: $state.params.participantId
+      };
+      item.$remove(itemParams, function(response) {
+      	console.log(response);
+        $state.go('events.detail.participants');
       });
     }
 

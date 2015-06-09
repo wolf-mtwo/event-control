@@ -58,5 +58,6 @@
 /api/events/participant/id/:eventId GET
 /api/events/participant/id/:eventId POST
 /api/events/participant/id/:eventId DELETE
+/api/events/participant/eventId/7/participantId/6
 
 ```

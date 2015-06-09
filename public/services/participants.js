@@ -9,8 +9,16 @@ angular.module('seedApp').factory('Participants', ['$resource',
         method: 'PUT'
       },
       save: {
-      	// url: url + '/talk/:talkId',
-      	method: 'POST'
+        // url: url + '/talk/:talkId',
+        method: 'POST'
+      },
+      get: {
+        url: url + 'participantId/:id',
+        method: 'GET'
+      },
+      remove: {
+      	url: url + 'participantId/:id',
+      	method: 'DELETE'
       }
     });
   }

@@ -9,6 +9,18 @@ angular.module('seedApp')
   'Talks',
   function($scope, $state, Global, Store, Talks) {
 
+    $scope.talk = {};
+
+    $scope.loadTalk = function() {
+      var itemParams = {
+        eventId: $state.params.id,
+        talkId: $state.params.talkId
+      };
+      Talks.get(itemParams, function(response) {
+        $scope.talk = response;
+      });
+    }
+
     $scope.loadTalks = function() {
       var itemParams = {
         eventId: $state.params.id
@@ -28,6 +40,17 @@ angular.module('seedApp')
       Talks.save(itemParams, item, function(response) {
       	console.log(response);
         $scope.talks.push(response);
+      });
+    }
+
+    $scope.remove = function(item) {
+      var itemParams = {
+        eventId: $state.params.id,
+        id: $state.params.talkId
+      };
+      item.$remove(itemParams, function(response) {
+        console.log(response);
+        $state.go('events.detail.talks');
       });
     }
   }

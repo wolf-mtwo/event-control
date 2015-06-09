@@ -51,6 +51,11 @@ class Events extends Master_Controller
     $this->save_model('talk', $params);
   }
 
+  function talk_delete()
+  {
+    $this->remove('talk', 'talkId');
+  }
+
   // PARTICIPANTS
   function participant_get()
   {
@@ -65,5 +70,10 @@ class Events extends Master_Controller
   {
     $params = array('eventId');
     $this->save_model('participant', $params);
+  }
+
+  function participant_delete()
+  {
+    $this->remove('participant', 'participantId');
   }
 }
