@@ -18,7 +18,7 @@ angular.module('seedApp')
 
     $scope.register = function(item) {
       User.save(item, function(response) {
-        $scope.changeToSessionMaster(reponse);
+        $scope.changeToSessionMaster(response);
       });
     }
 

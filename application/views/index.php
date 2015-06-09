@@ -21,6 +21,7 @@
 		<script src="./public/routes/events.js"></script>
 		<script src="./public/routes/home.js"></script>
 		<script src="./public/routes/public.js"></script>
+		<script src="./public/routes/talk.js"></script>
 
 		<script src="./public/services/global.js"></script>
 		<script src="./public/services/store.js"></script>
@@ -38,6 +39,7 @@
 		<script src="./public/controllers/events/create.js"></script>
 		<script src="./public/controllers/events/talks.js"></script>
 		<script src="./public/controllers/events/participants.js"></script>
+		<script src="./public/controllers/talk/talk.js"></script>
 
 	</head>
 

@@ -1,0 +1,18 @@
+<div class="row" ng-init="loadTalk()">
+  <div class="page-header">
+	  <h1>{{talk.title}} <small>Subtext for header</small></h1>
+	</div>
+  <div>
+	<ul class="nav nav-tabs">
+	  <li role="presentation">
+			<a ui-sref="talk.detail.attendace">Asistencia</a>
+	  </li>
+	  <li role="presentation">
+			<a ui-sref="talk.detail.list">Lista</a>
+	  </li>
+	</ul>
+
+  <div ui-view>
+  </div>
+
+</div>
