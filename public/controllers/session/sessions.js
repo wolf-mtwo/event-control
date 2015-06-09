@@ -28,7 +28,7 @@ angular.module('seedApp')
       }
       Store.save('session', user);
       Global.user = user;
-      $state.go('events');
+      $state.go('events.list');
     }
   }
 ]);

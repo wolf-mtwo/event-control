@@ -1,1 +1,63 @@
-create participant
+<form ng-submit="create(item)">
+  <div class="form-group">
+    <label>Nombre</label>
+    <input type="text"
+		    class="form-control"
+		    ng-model="item.first_name"
+		    placeholder="first_name">
+  </div>
+  <div class="form-group">
+    <label>Apellido</label>
+    <input type="text"
+	    	class="form-control"
+		    ng-model="item.last_name"
+		    placeholder="last_name">
+  </div>
+  <div class="form-group">
+    <label>cel</label>
+    <input type="text"
+	    	class="form-control"
+		    ng-model="item.cel"
+		    placeholder="cel">
+  </div>
+  <div class="form-group">
+    <label>ci</label>
+    <input type="text"
+	    	class="form-control"
+		    ng-model="item.ci"
+		    placeholder="ci">
+  </div>
+  <div class="form-group">
+    <label>address</label>
+    <input type="text"
+	    	class="form-control"
+		    ng-model="item.address"
+		    placeholder="address">
+  </div>
+  <div class="form-group">
+    <label>email</label>
+    <input type="text"
+	    	class="form-control"
+		    ng-model="item.email"
+		    placeholder="email">
+  </div>
+  <div class="form-group">
+    <label>Imagen</label>
+    <input type="text"
+		    class="form-control"
+		    ng-model="item.image"
+		    placeholder="*.jpg">
+  </div>
+  <div class="form-group">
+    <button ngf-select
+            ng-model="files"
+            ngf-change="upload($files)">Upload on file change</button>
+    <div>
+      <div ng-repeat="log in logs">
+        {{log}}
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default">crear participant</button>
+  <button class="btn btn-default" ui-sref="events.detail.participants">Cancelar</button>
+</form>

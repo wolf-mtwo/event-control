@@ -1,18 +1,19 @@
-<div class="container" ng-init="loadEvent()">
-  <h1>
-    {{event.id}}
-    {{event.title}}
-    {{event.userId}}
-  </h1>
-
-  <a ui-sref="events.detail.participants">participantes</a>
-  <a ui-sref="events.detail.talks">charlas</a>
-
+<div ng-init="loadEvent()">
+	<div class="page-header">
+	  <h1>{{event.title}} <small>Subtext for header</small></h1>
+	  <!-- <h1>
+	    {{event.userId}}
+	  </h1> -->
+	</div>
+	<ul class="nav nav-tabs">
+	  <!-- <li role="presentation" class="active"> -->
+	  <li role="presentation">
+  		<a ui-sref="events.detail.talks">charlas</a>
+	  </li>
+	  <li role="presentation">
+  		<a ui-sref="events.detail.participants">participantes</a>
+	  </li>
+	</ul>
   <div ui-view>
   </div>
-</div> <!-- /container -->
-<!-- 
-<div ui-view>
-
 </div>
- -->

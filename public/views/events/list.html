@@ -1,13 +1,42 @@
-<div class="container" ng-init="loadEvents()">
-  <div>
-    <a ui-sref="events.create">create</a>
-  </div>
-  <div ng-repeat="event in events">
-    <div>
-      {{event.id}}
-      {{event.title}}
-      {{event.userId}}
-      <a ui-sref="events.detail.talks({id: event.id})">load</a>
+<style type="text/css">
+img {
+  width: 100%;
+}
+.space {
+  padding-bottom: 10px;
+  border-top: 1px solid #D3D3D3;
+}
+</style>
+<div ng-init="loadEvents()">
+  <div class="row space" ng-repeat="event in events">
+    <div >
+      <div class="col-sm-2">
+        <img src="./public/assets/img/store/{{event.image}}" alt="{{event.title}}">
+      </div>
+        
+      <div class="col-sm-10">
+        <div class="caption">
+          <h3 ng-if="event.title">
+            <a ui-sref="events.detail.talks({id: event.id})">
+              {{event.title}}
+            </a>
+          </h3>
+          <h3 ng-if="!event.title">
+            <a ui-sref="events.detail.talks({id: event.id})">
+              no tiene nombre
+            </a>
+          </h3>
+          <p>Lorem arcu sit dapibus pulvinar enim turpis? Tincidunt? Elementum nunc porta ridiculus sed? Tempor nec? Dolor facilisis sed, et ultrices! Non eros est est? Augue ultrices, amet? Arcu in risus.</p>
+          <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div>
+    <a class="btn btn-primary"
+      ui-sref="events.create">
+      Create un event
+    </a>
   </div>
 </div> <!-- /container -->

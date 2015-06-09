@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS `participant` (
   `eventId` int(11) NOT NULL,
   `first_name` varchar(25) NOT NULL,
   `last_name` varchar(50) NOT NULL,
+  `image` varchar(100) NOT NULL,
   `cel` varchar(15) NOT NULL,
   `ci` varchar(10) NOT NULL,
   `address` varchar(200) NOT NULL,
