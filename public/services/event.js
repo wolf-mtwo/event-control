@@ -9,6 +9,10 @@ angular.module('seedApp').factory('Event', ['$resource',
         url: url + '/id/:id',
         method: 'GET'
       },
+      remove: {
+        url: url + '/id/:id',
+        method: 'DELETE'
+      },
       update: {
         method: 'PUT'
       }

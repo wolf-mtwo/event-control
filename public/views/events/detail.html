@@ -1,19 +1,23 @@
 <div ng-init="loadEvent()">
-	<div class="page-header">
-	  <h1>{{event.title}} <small>Subtext for header</small></h1>
-	  <!-- <h1>
-	    {{event.userId}}
-	  </h1> -->
-	</div>
-	<ul class="nav nav-tabs">
-	  <!-- <li role="presentation" class="active"> -->
-	  <li role="presentation">
-  		<a ui-sref="events.detail.talks">charlas</a>
-	  </li>
-	  <li role="presentation">
-  		<a ui-sref="events.detail.participants">participantes</a>
-	  </li>
-	</ul>
+  <div class="page-header">
+    <h1>{{event.title}}
+      <small>
+        Subtext for header
+        <h6 class="label label-danger" ng-click="removeEvent(event)">
+          Eliminar
+        </h6>
+      </small>
+    </h1>
+  </div>
+  <ul class="nav nav-tabs">
+    <!-- <li role="presentation" class="active"> -->
+    <li role="presentation">
+      <a ui-sref="events.detail.talks">charlas</a>
+    </li>
+    <li role="presentation">
+      <a ui-sref="events.detail.participants">participantes</a>
+    </li>
+  </ul>
   <div ui-view>
   </div>
 </div>

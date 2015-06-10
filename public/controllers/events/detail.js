@@ -7,6 +7,7 @@ angular.module('seedApp')
   'Global',
   'Event',
   function($scope, $state, Global, Event) {
+
     $scope.event = {};
     $scope.events = [];
     $scope.talks = [];

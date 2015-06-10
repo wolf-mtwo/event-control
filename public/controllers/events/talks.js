@@ -31,9 +31,6 @@ angular.module('seedApp')
     }
 
     $scope.create = function(item) {
-     
-      // item.event = $state.params.id
-      // console.log(item);
       var itemParams = {
         eventId: $state.params.id
       };

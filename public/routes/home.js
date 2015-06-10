@@ -1,4 +1,5 @@
 'use strict';
+
 angular.module('seedApp')
 .config(['$urlRouterProvider', '$stateProvider',
   function($urlRouterProvider, $stateProvider) {

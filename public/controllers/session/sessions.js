@@ -1,7 +1,13 @@
 'use strict';
 
 angular.module('seedApp')
-.controller('SessionsController', ['$scope', '$state', 'Global', 'Session', 'User', 'Store',
+.controller('SessionsController', [
+  '$scope',
+  '$state',
+  'Global',
+  'Session',
+  'User',
+  'Store',
   function($scope, $state, Global, Session, User, Store) {
 
     $scope.item = {

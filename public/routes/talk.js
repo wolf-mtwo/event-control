@@ -1,5 +1,3 @@
-
-
 'use strict';
 
 angular.module('seedApp')
@@ -7,6 +5,7 @@ angular.module('seedApp')
 function($urlRouterProvider, $stateProvider) {
 
   var path = './public/views/talk';
+
   $stateProvider.state('talk', {
     url: '/talk',
     templateUrl: path + '/index.html',
@@ -15,20 +14,17 @@ function($urlRouterProvider, $stateProvider) {
 
   $stateProvider.state('talk.detail', {
     url: '/:talkId',
-    templateUrl: path + '/detail.html',
-    controller: 'TalkController'
+    templateUrl: path + '/detail.html'
   });
 
   $stateProvider.state('talk.detail.attendace', {
     url: '/attendace',
-    templateUrl: path + '/attendace.html',
-    controller: 'TalkController'
+    templateUrl: path + '/attendace.html'
   });
 
   $stateProvider.state('talk.detail.list', {
     url: '/list',
-    templateUrl: path + '/list.html',
-    controller: 'TalkController'
+    templateUrl: path + '/list.html'
   });
 }
 ]);

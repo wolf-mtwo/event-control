@@ -9,8 +9,8 @@ angular.module('seedApp')
   'Event',
   'Upload',
   function($scope, $state, Global, Store, Event, Upload) {
-    $scope.logs = [];
 
+    $scope.logs = [];
     $scope.item = {
       image: null
     };
