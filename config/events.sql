@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `att` (
   `userId` int(11) NOT NULL,
   `talkId` int(11) NOT NULL,
   `stateId` int(11) NOT NULL,
+  `participantId` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

@@ -41,6 +41,7 @@ eventId
 userId
 talkId
 stateId
+participantId
 ======== state
 id
 color

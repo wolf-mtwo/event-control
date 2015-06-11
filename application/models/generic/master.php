@@ -58,6 +58,12 @@ class Master extends CI_Model {
     return null;
   }
 
+  function update($id, $item){
+    $this->db->where('id', $id);
+    $this->db->update($this->tbl, $item);
+    return $this->get_by_id($id);
+  }
+
   function delete($id)
   {
     $item = $this->get_by_id($id);

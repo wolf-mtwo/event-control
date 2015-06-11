@@ -23,6 +23,9 @@
 .att {
   padding: 10px 0px;
 }
+.att h3 {
+  margin: 0px;
+}
 </style>
   <div ui-view>
     <div class="row att">
@@ -36,8 +39,12 @@
             <h3>{{participant.first_name}}</h3>
             <p>
               {{participant.last_name}}
-              <small class="label label-warning">
+              <small ng-if="participant.att" class="label" ng-class="{'1':'label-success', '2': 'label-warning', '3': 'label-danger'}[participant.att.stateId]">
+
                 Warning
+              </small>
+              <small ng-if="!participant.att" class="label label-info">
+                Sin estado
               </small>
             </p>
           </div>
@@ -52,18 +59,6 @@
               ng-class="{'1':'glyphicon-thumbs-up', '2':'glyphicon-hand-right', '3':'glyphicon-thumbs-down'}[state.id]"></i>
             </a>
           </div>
-          <!-- <div style="float: right;margin-top:-7px;">
-            
-            <a class="btn btn-success" data-ng-click="changeStatus(participant, 10)">
-              <i class="glyphicon glyphicon-thumbs-up"></i>
-            </a>
-            <a class="btn btn-warning" data-ng-click="changeStatus(participant, 5)">
-              <i class="glyphicon glyphicon-hand-right"></i>
-            </a>
-            <a class="btn btn-danger" data-ng-click="changeStatus(participant, null)">
-              <i class="glyphicon glyphicon-thumbs-down"></i>
-            </a>
-          </div> -->
         </div>
       </div>
     </div>

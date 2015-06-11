@@ -67,7 +67,7 @@ class Master_Controller extends REST_Controller
   {
     try {
       $get_params = $this->get();
-      $where = $this->validate_input($params);
+      $where = $this->get_inputs($params);
       $response = $this->$model->find($where);
       $this->response($response, 200);
     } catch (Exception $e) {
@@ -75,9 +75,8 @@ class Master_Controller extends REST_Controller
     }
   }
 
-  function validate_input($params)
+  function get_inputs($params)
   {
-    $this->validator($params, 'params');
     $newItem = array();
     $get_params = $this->get();
     foreach ($params as $value) {
@@ -95,6 +94,19 @@ class Master_Controller extends REST_Controller
     try {
       $id = $this->get($param);
       $item = $this->$model->delete($id);
+      $this->response($item, 200);
+    } catch (Exception $e) {
+      $this->response(array("error" => $e->getMessage()), 404);
+    }
+  }
+
+  function update($model, $params = array())
+  {
+    try {
+      $input_values = $this->put();
+      $where = $this->get_inputs($params);
+      $item = array_merge($input_values, $where);
+      $item = $this->$model->update($item['id'], $item);
       $this->response($item, 200);
     } catch (Exception $e) {
       $this->response(array("error" => $e->getMessage()), 404);

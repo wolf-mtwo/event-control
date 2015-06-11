@@ -1,6 +1,6 @@
 <?php
 
-require APPPATH . '/models/generic/master.php';
+require_once APPPATH . '/models/generic/master.php';
 
 class Att extends Master {
 

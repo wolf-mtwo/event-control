@@ -9,6 +9,7 @@ class Talk extends Master_Controller
     parent::__construct();
     $this->load->database();
     $this->load->model('state');
+    $this->load->model('att');
   }
 
   // State
@@ -29,10 +30,22 @@ class Talk extends Master_Controller
     $this->get_all_model('att');
   }
 
+  function attendance_get()
+  {
+    $params = array('talkId');
+    $this->get_all_model('att', $params);
+  }
+
   function att_post()
   {
-    $params = array('attId');
+    $params = array('talkId');
     $this->save_model('att', $params);
+  }
+
+  function att_put()
+  {
+    $params = array('talkId');
+    $this->update('att', $params);
   }
 
   function att_delete()

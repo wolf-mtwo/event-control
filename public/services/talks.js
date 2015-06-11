@@ -13,8 +13,8 @@ angular.module('seedApp').factory('Talks', ['$resource',
         method: 'GET'
       },
       save: {
-      	// url: url + '/talk/:talkId',
-      	method: 'POST'
+        // url: url + '/talk/:talkId',
+        method: 'POST'
       },
       remove: {
         url: url + 'talkId/:id',

@@ -17,8 +17,8 @@ angular.module('seedApp').factory('Participants', ['$resource',
         method: 'GET'
       },
       remove: {
-      	url: url + 'participantId/:id',
-      	method: 'DELETE'
+        url: url + 'participantId/:id',
+        method: 'DELETE'
       }
     });
   }

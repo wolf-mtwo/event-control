@@ -24,9 +24,8 @@ angular.module('seedApp')
     $scope.talk = {};
     $scope.participants = [];
     States.query(function(response) {
-      console.log(response);
       $scope.states = response;
-    })
+    });
 
     $scope.loadTalkController = function() {
       $scope.loadTalk();
@@ -42,7 +41,16 @@ angular.module('seedApp')
       Talks.get(itemParams, function(response) {
         $scope.talk = response;
       });
-    }
+    };
+
+    $scope.loadAttendance = function() {
+      Atts.attendance({talkId: $state.params.talkId}, function(response) {
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+          $scope.loadParticipantAttendance(response[i]);
+        };
+      });
+    };
 
     $scope.changeStatus = function(participant, state) {
       if (!participant.id) {
@@ -51,14 +59,21 @@ angular.module('seedApp')
       if (!state.id) {
         throw new Error('state in undefined');
       };
+      if (participant.att) {
+        participant.att.stateId = state.id;
+        participant.att.$update({talkId: $state.params.talkId}, function(response) {
+          console.log(response);
+        });
+        return;
+      }
       var itemParams = {
         eventId: $state.params.eventId,
-        talkId: $state.params.talkId,
-        userId: participant.id,
+        participantId: participant.id,
         stateId: state.id
       };
-      Atts.save(itemParams, function(response) {
+      Atts.save({talkId: $state.params.talkId}, itemParams, function(response) {
         console.log(response);
+        $scope.loadParticipantAttendance(response);
       });
     }
 
@@ -67,10 +82,18 @@ angular.module('seedApp')
         eventId: $state.params.eventId
       };
       Participants.query(itemParams, function(response) {
-        console.log(response);
         $scope.participants = response;
+        $scope.loadAttendance();
       });
-    }
+    };
+
+    $scope.loadParticipantAttendance = function(att) {
+      for (var i = 0; i < $scope.participants.length; i++) {
+        if ($scope.participants[i].id == att.participantId) {
+          $scope.participants[i].att = att;
+        };
+      };
+    };
 
     // repeat
     $scope.logout = function() {
