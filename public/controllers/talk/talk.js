@@ -37,7 +37,6 @@ angular.module('seedApp')
         eventId: $state.params.eventId,
         talkId: $state.params.talkId
       };
-      console.log(itemParams);
       Talks.get(itemParams, function(response) {
         $scope.talk = response;
       });
@@ -45,7 +44,6 @@ angular.module('seedApp')
 
     $scope.loadAttendance = function() {
       Atts.attendance({talkId: $state.params.talkId}, function(response) {
-        console.log(response);
         for (var i = 0; i < response.length; i++) {
           $scope.loadParticipantAttendance(response[i]);
         };
@@ -72,7 +70,6 @@ angular.module('seedApp')
         stateId: state.id
       };
       Atts.save({talkId: $state.params.talkId}, itemParams, function(response) {
-        console.log(response);
         $scope.loadParticipantAttendance(response);
       });
     }
