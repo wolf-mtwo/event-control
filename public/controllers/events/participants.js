@@ -42,7 +42,6 @@ angular.module('seedApp')
         eventId: $state.params.id
       };
       Participants.save(itemParams, item, function(response) {
-        console.log(response);
         $scope.participants.push(response);
       });
     }
@@ -53,7 +52,6 @@ angular.module('seedApp')
         id: $state.params.participantId
       };
       item.$remove(itemParams, function(response) {
-      	console.log(response);
         $state.go('events.detail.participants');
       });
     }

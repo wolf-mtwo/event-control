@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-require APPPATH.'/controllers/api/generic/master.php';
+require_once APPPATH.'/controllers/api/generic/master.php';
 
 class Events extends Master_Controller
 {

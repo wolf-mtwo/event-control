@@ -7,7 +7,7 @@ function($urlRouterProvider, $stateProvider) {
   var path = './public/views/talk';
 
   $stateProvider.state('talk', {
-    url: '/talk',
+    url: '/event/:eventId/talk',
     templateUrl: path + '/index.html',
     controller: 'TalkController'
   });

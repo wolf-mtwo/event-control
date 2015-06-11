@@ -18,28 +18,30 @@
 		<link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
 
 		<script src="./public/app.js"></script>
-		<script src="./public/routes/events.js"></script>
 		<script src="./public/routes/home.js"></script>
-		<script src="./public/routes/public.js"></script>
 		<script src="./public/routes/talk.js"></script>
+		<script src="./public/routes/events.js"></script>
+		<script src="./public/routes/public.js"></script>
 
-		<script src="./public/services/global.js"></script>
-		<script src="./public/services/store.js"></script>
-		<script src="./public/services/session.js"></script>
+		<script src="./public/services/atts.js"></script>
 		<script src="./public/services/user.js"></script>
 		<script src="./public/services/event.js"></script>
 		<script src="./public/services/talks.js"></script>
+		<script src="./public/services/store.js"></script>
+		<script src="./public/services/global.js"></script>
+		<script src="./public/services/states.js"></script>
+		<script src="./public/services/session.js"></script>
 		<script src="./public/services/participants.js"></script>
 
 		<script src="./public/controllers/home.js"></script>
 		<script src="./public/controllers/contact.js"></script>
-		<script src="./public/controllers/session/sessions.js"></script>
+		<script src="./public/controllers/talk/talk.js"></script>
+		<script src="./public/controllers/events/talks.js"></script>
 		<script src="./public/controllers/events/events.js"></script>
 		<script src="./public/controllers/events/detail.js"></script>
 		<script src="./public/controllers/events/create.js"></script>
-		<script src="./public/controllers/events/talks.js"></script>
+		<script src="./public/controllers/session/sessions.js"></script>
 		<script src="./public/controllers/events/participants.js"></script>
-		<script src="./public/controllers/talk/talk.js"></script>
 
 	</head>
 

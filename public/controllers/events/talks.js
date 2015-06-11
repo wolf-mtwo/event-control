@@ -10,6 +10,7 @@ angular.module('seedApp')
   function($scope, $state, Global, Store, Talks) {
 
     $scope.talk = {};
+    $scope.params = $state.params;
 
     $scope.loadTalk = function() {
       var itemParams = {
