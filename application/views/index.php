@@ -39,6 +39,7 @@
 		<script src="./public/controllers/contact.js"></script>
 		<script src="./public/controllers/talk/talk.js"></script>
 		<script src="./public/controllers/events/talks.js"></script>
+		<script src="./public/controllers/events/qrcode.js"></script>
 		<script src="./public/controllers/events/events.js"></script>
 		<script src="./public/controllers/events/detail.js"></script>
 		<script src="./public/controllers/events/create.js"></script>

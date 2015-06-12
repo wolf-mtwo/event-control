@@ -79,5 +79,11 @@ function($urlRouterProvider, $stateProvider) {
     templateUrl: path + '/talks/detail.html',
     controller: 'TalksController'
   });
+
+  $stateProvider.state('events.detail.qrcode', {
+    url: '/identifiers',
+    templateUrl: path + '/qrcode/index.html',
+    controller: 'QrcodeController'
+  });
 }
 ]);

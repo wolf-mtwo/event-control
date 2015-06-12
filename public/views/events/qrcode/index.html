@@ -1,0 +1,22 @@
+<h1>Identificadores</h1>
+<div class="row" ng-init="loadParticipants()">
+  <div class="col-sm-6 col-md-3" ng-repeat="participant in participants">
+    <div class="trm">
+      <div class="img-align">
+        <qrcode version="3"
+                size="200"
+                error-correction-level="M"
+                data="{{participant.code}}"
+                href="{{participant.code}}">
+          </qrcode>
+      </div>
+      <div class="caption">
+        <h3>{{participant.first_name}} {{participant.last_name}}</h3>
+        
+        <p>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

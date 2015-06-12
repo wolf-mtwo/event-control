@@ -1,0 +1,29 @@
+<style type="text/css">
+.img-detail-participant {
+  width: 100%;
+  padding: 20px 0px;
+}
+</style>
+<div class="row">
+  <div class="col-sm-6 col-md-3" ng-init="loadParticipant()">
+    <div>
+      <img src="./public/assets/img/store/{{participant.image}}"
+          class="img-rounded img-detail-participant">
+    </div>
+    <div>
+      <button class="btn btn-info" ui-sref="events.detail.participants">Actualizar</button>
+      <button class="btn btn-danger" ng-click="remove(participant)">Eliminar</button>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-8">
+    <div class='container-fluid'>
+      <h4>detalle del participante</h4>
+      <pre><b>first_name</b> {{participant.first_name}}</pre>
+      <pre><b>last_name:</b>{{participant.last_name}}</pre>
+      <pre><b>cel:</b>{{participant.cel}}</pre>
+      <pre><b>ci:</b>{{participant.ci}}</pre>
+      <pre><b>address:</b>{{participant.address}}</pre>
+      <pre><b>email:</b>{{participant.email}}</pre>
+    </div>
+  </div>
+</div>
