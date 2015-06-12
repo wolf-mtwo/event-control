@@ -2,6 +2,7 @@
 
 angular.module('seedApp', [
   'ngRoute',
+  'monospaced.qrcode',
   'ui.router',
   'ngResource',
   'ngFileUpload',

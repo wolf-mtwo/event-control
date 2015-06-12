@@ -13,6 +13,8 @@
 		<script src="./public/bower_components/jquery/dist/jquery.js"></script>
 		<script src="./public/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 		<script src="./public/bower_components/ng-file-upload/ng-file-upload.js"></script>
+		<script src="./public/bower_components/qrcode-generator/js/qrcode.js"></script>
+		<script src="./public/bower_components/angular-qrcode/qrcode.js"></script>
 
 		<link rel="stylesheet" href="./public/assets/css/style.css">
 		<link rel="stylesheet" href="./public/bower_components/bootstrap/dist/css/bootstrap.css">
