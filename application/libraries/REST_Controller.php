@@ -483,6 +483,7 @@ abstract class REST_Controller extends CI_Controller
             elseif (method_exists($this->format, 'to_'.$this->response->format)) {
                 // Set the correct format header
                 header('Content-Type: '.$this->_supported_formats[$this->response->format] . '; charset=' . strtolower($this->config->item('charset')));
+                header('Cache-Control:no-cache');
 
                 $output = $this->format->factory($data)->{'to_'.$this->response->format}();
             }

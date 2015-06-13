@@ -16,25 +16,28 @@ angular.module('seedApp')
         eventId: $state.params.id
       };
       Participants.query(itemParams, function(participants) {
-        // $scope.buildUrl(response);
-        var code = 'http://localhost/';
         participants.forEach(function(participant) {
-          participant.code = code;
-        })
-        // for (var i in participants) {
-        //   console.log(participants[i]);
-        //   // participants[i].code = code;
-        // };
+          participant.code = $scope.buildUrl(participant);
+        });
         $scope.participants = participants;
       });
     }
 
-    $scope.buildUrl = function(participants) {
-      var code = 'http://localhost/';
-      for (var i in participants) {
-        participants[i].code = code;
-      };
-      $scope.participants = participants;
+    $scope.buildUrl = function(participant) {
+      var str = 'eid/{0}/pid/{2}';
+      var eventId = $state.params.id;
+      var participantId = participant.id;
+      str = str.replace('{0}', eventId)
+      .replace('{2}', participantId);
+      var code = [
+        'http://',
+        location.host,
+        location.pathname,
+        'attendance/talk/',
+        str
+      ].join('');
+      console.log(code);
+      return code;
     }
 
     $scope.build = function(participant) {
@@ -42,3 +45,4 @@ angular.module('seedApp')
     }
   }
 ]);
+;

@@ -74,4 +74,13 @@ class Master extends CI_Model {
     $this->db->delete($this->tbl);
     return $item;
   }
+
+  function count_all(){
+    return $this->db->count_all($this->tbl_person);
+  }
+
+  function get_paged_list($limit = 10, $offset = 0){
+    $this->db->order_by('id','asc');
+    return $this->db->get($this->tbl_person, $limit, $offset);
+  }
 }

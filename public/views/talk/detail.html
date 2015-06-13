@@ -1,6 +1,11 @@
 <div class="row" ng-init="loadTalkController()">
   <div class="page-header">
-    <h1>{{talk.title}}</h1>
+    <h1>
+      <a ui-sref="events.detail.talks({id: params.eventId})">
+        Charlas &raquo;
+      </a>
+      {{talk.title}}
+    </h1>
   </div>
   <div>
   <ul class="nav nav-tabs">
@@ -40,8 +45,7 @@
             <p>
               {{participant.last_name}}
               <small ng-if="participant.att" class="label" ng-class="{'1':'label-success', '2': 'label-warning', '3': 'label-danger'}[participant.att.stateId]">
-
-                Warning
+              {{getState(participant.att.stateId)}}
               </small>
               <small ng-if="!participant.att" class="label label-info">
                 Sin estado

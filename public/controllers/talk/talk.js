@@ -21,6 +21,7 @@ angular.module('seedApp')
     Atts
   ) {
 
+    $scope.params = $state.params;
     $scope.talk = {};
     $scope.participants = [];
     States.query(function(response) {
@@ -91,6 +92,16 @@ angular.module('seedApp')
         };
       };
     };
+
+    $scope.getState = function(stateId) {
+      var userState = null;
+      $scope.states.forEach(function(state) {
+        if (state.id == stateId) {
+          userState = state.title;
+        }
+      });
+      return userState;
+    }
 
     // repeat
     $scope.logout = function() {
