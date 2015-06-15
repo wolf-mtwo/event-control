@@ -19,10 +19,13 @@
   -o-transition: border .2s ease-in-out;
   transition: border .2s ease-in-out;
 }
+.space {
+  padding: 10px 0;
+}
 </style>
 <h1>Participantes</h1>
 <div ui-view>
-  <div>
+  <div class="space">
     <a class="btn btn-primary"
       ui-sref="events.detail.participants.create">
       Añadir participantes

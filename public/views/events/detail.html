@@ -1,14 +1,4 @@
 <div ng-init="loadEvent()">
-  <div class="page-header">
-    <h1>{{event.title}}
-      <small>
-        Subtitulo no disponible
-        <h6 class="label label-danger" ng-click="removeEvent(event)">
-          Eliminar
-        </h6>
-      </small>
-    </h1>
-  </div>
   <ul class="nav nav-tabs">
     <li role="presentation">
       <a ui-sref="events.detail.talks">Charlas</a>
@@ -20,6 +10,18 @@
       <a ui-sref="events.detail.qrcode">Identificadores</a>
     </li>
   </ul>
+  <div class="page-header">
+    <h1>{{event.title}}
+      <small>
+        Subtitulo no disponible
+        <h6 class="label label-danger" ng-click="removeEvent(event)">
+          Eliminar
+        </h6>
+      </small>
+    </h1>
+  </div>
+
   <div ui-view>
   </div>
+
 </div>
