@@ -21,26 +21,26 @@
 
 ### Historias de usuario:
 
-- crear usuarios (cualquiera puede ser usuarios)
-- create un evento
+- crear usuarios (cualquiera puede ser usuarios) **done**
+- create un evento **done**
 - editar datos personales
-- administrador
-  - registrar charlas
+- administrador **done**
+  - registrar charlas **done**
   - editar charlas
-  - eliminar charlas
+  - eliminar charlas **done**
   - añadir staff
-  - añadir participante
-    - añadir parcipante con fotos
-    - recolectar los siguiente datos
+  - añadir participante **done**
+    - añadir participante con fotos **done**
+    - recolectar los siguiente datos **done**
       - name **requerido**
       - cel
       - email
       - ci
       - address
 - staff
-  - llamar lista
-  - llamar lista de forma alfabetica
-  - agregar parcipante
+  - llamar lista **done**
+  - llamar lista de forma alfabetica **done**
+  - agregar participante **done**
 - reportes
   - total de participante por evento
 

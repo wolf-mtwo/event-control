@@ -36,7 +36,6 @@ angular.module('seedApp')
         eventId: $state.params.id
       };
       Talks.save(itemParams, item, function(response) {
-      	console.log(response);
         $scope.talks.push(response);
       });
     }
@@ -47,7 +46,6 @@ angular.module('seedApp')
         id: $state.params.talkId
       };
       item.$remove(itemParams, function(response) {
-        console.log(response);
         $state.go('events.detail.talks');
       });
     }

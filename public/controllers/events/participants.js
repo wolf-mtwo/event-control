@@ -12,11 +12,6 @@ angular.module('seedApp')
 
     $scope.logs = [];
     $scope.participant = {};
-    $scope.item = {
-      image: null,
-      'first_name': 'Lorem',
-      'last_name': 'ipsum Arcu'
-    };
 
     $scope.loadParticipants = function() {
       var itemParams = {
@@ -43,6 +38,7 @@ angular.module('seedApp')
       };
       Participants.save(itemParams, item, function(response) {
         $scope.participants.push(response);
+        $state.go('events.detail.participants');
       });
     }
 

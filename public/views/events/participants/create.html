@@ -20,21 +20,21 @@
           placeholder="last_name">
     </div>
     <div class="form-group">
-      <label>cel</label>
+      <label>Numero de celular</label>
       <input type="text"
           class="form-control"
           ng-model="item.cel"
           placeholder="cel">
     </div>
     <div class="form-group">
-      <label>ci</label>
+      <label>CI</label>
       <input type="text"
           class="form-control"
           ng-model="item.ci"
           placeholder="ci">
     </div>
     <div class="form-group">
-      <label>address</label>
+      <label>Direccion</label>
       <input type="text"
           class="form-control"
           ng-model="item.address"
@@ -57,14 +57,14 @@
     <div class="form-group">
       <button ngf-select
               ng-model="files"
-              ngf-change="upload($files)">Upload on file change</button>
+              ngf-change="upload($files)">Cargar imagen</button>
       <div>
         <div ng-repeat="log in logs">
           {{log}}
         </div>
       </div>
     </div>
-    <button type="submit" class="btn btn-default">
+    <button type="submit" class="btn btn-primary">
       Registrar nuevo participante
     </button>
     <button class="btn btn-default" ui-sref="events.detail.participants">

@@ -15,14 +15,12 @@ angular.module('seedApp')
 
     $scope.loadEvents = function() {
       Event.query({}, function(reponse) {
-        console.log(reponse);
         $scope.events = reponse;
       });
     };
 
     $scope.loadEvent = function() {
       Event.get({id: $state.params.id}, function(reponse) {
-        console.log(reponse);
         $scope.event = reponse;
       });
     };

@@ -10,14 +10,8 @@ angular.module('seedApp')
   'Store',
   function($scope, $state, Global, Session, User, Store) {
 
-    $scope.item = {
-      email: 'wolf',
-      password: 'wolf'
-    };
-
     $scope.login = function(item) {
       Session.login(item, function(response) {
-        console.log(response);
         $scope.changeToSessionMaster(response);
       });
     }

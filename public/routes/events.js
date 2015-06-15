@@ -21,9 +21,9 @@ function($urlRouterProvider, $stateProvider) {
     url: '/events',
     templateUrl: path + '/index.html',
     controller: 'EventsController',
-    // resolve:{
-    //   init: validateSession
-    // }
+    resolve:{
+      init: validateSession
+    }
   });
 
   $stateProvider.state('events.list', {

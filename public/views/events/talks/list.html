@@ -1,4 +1,12 @@
-<h1>charlas</h1>
+<h1>Charlas</h1>
+<div ui-view>
+  <div>
+    <a class="btn btn-primary"
+    ui-sref="events.detail.talks.create">
+      Crear charla
+    </a>
+  </div>
+</div>
 <div class="row" ng-init="loadTalks()">
   <div class="col-sm-6 col-md-4" ng-repeat="talk in talks">
     <div class="caption">
@@ -22,14 +30,4 @@
       </p>
     </div>
   </div>
-</div>
-
-<div ui-view>
-</div>
-
-<div>
-  <a class="btn btn-primary"
-  ui-sref="events.detail.talks.create">
-    Crear charla
-  </a>
 </div>

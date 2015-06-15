@@ -11,7 +11,8 @@ img {
   <div class="row space" ng-repeat="event in events">
     <div>
       <div class="col-sm-2">
-        <img src="./public/assets/img/store/{{event.image}}" alt="{{event.title}}">
+        <img src="./public/assets/img/store/{{event.image}}"
+             alt="{{event.title}}">
       </div>
       <div class="col-sm-10">
         <div class="caption">
@@ -22,11 +23,10 @@ img {
           </h3>
           <h3 ng-if="!event.title">
             <a ui-sref="events.detail.talks({id: event.id})">
-              no tiene nombre
+              No tiene nombre
             </a>
           </h3>
           <p>Lorem arcu sit dapibus pulvinar enim turpis? Tincidunt? Elementum nunc porta ridiculus sed? Tempor nec? Dolor facilisis sed, et ultrices! Non eros est est? Augue ultrices, amet? Arcu in risus.</p>
-          <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@ img {
   <div>
     <a class="btn btn-primary"
       ui-sref="events.create">
-      Create un event
+      Crear un evento
     </a>
   </div>
 </div>

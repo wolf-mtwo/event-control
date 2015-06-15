@@ -21,6 +21,14 @@
 }
 </style>
 <h1>Participantes</h1>
+<div ui-view>
+  <div>
+    <a class="btn btn-primary"
+      ui-sref="events.detail.participants.create">
+      Añadir participantes
+    </a>
+  </div>
+</div>
 <div class="row" ng-init="loadParticipants()">
   <div class="col-sm-6 col-md-2" ng-repeat="participant in participants">
     <div class="trm">
@@ -30,28 +38,15 @@
           class="img-rounded img-participant">
       </div>
       <div class="caption">
-        <h3>{{participant.first_name}}</h3>
+        <h3>
+          <a ui-sref="events.detail.participantsdetail({participantId: participant.id})">
+            {{participant.first_name}}
+          </a>
+        </h3>
         <p>
           {{participant.last_name}}
-        </p>
-        <p>
-          <a ui-sref="events.detail.participantsdetail({participantId: participant.id})"
-            class="btn btn-primary"
-            role="button">
-            Detalle
-          </a>
         </p>
       </div>
     </div>
   </div>
-</div>
-
-<div ui-view>
-</div>
-
-<div>
-  <a class="btn btn-primary"
-    ui-sref="events.detail.participants.create">
-    Añadir participantes
-  </a>
 </div>
