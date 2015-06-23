@@ -52,4 +52,20 @@ class Talk extends Master_Controller
   {
     $this->remove('att', 'attId');
   }
+
+  function validate_post()
+  {
+    $query = array(
+      'talkId' => $this->post('talkId'),
+      'participantId' => $this->post('participantId')
+    );
+    $att = $this->att->find_one($query);
+    if (count($att)) {
+      $newAtt = $this->att->update($att['id'], $this->post());
+      $this->response($newAtt, 200);
+    } else {
+      $newAtt = $this->att->save($this->post());
+      $this->response($newAtt, 200);
+    }
+  }
 }

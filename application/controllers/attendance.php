@@ -6,9 +6,10 @@ class Attendance extends CI_Controller {
     parent::__construct();
     $this->load->database();
     $this->load->model('att');
-    $this->load->model('event');
-    $this->load->model('participant');
     $this->load->model('talk');
+    $this->load->model('event');
+    $this->load->model('state');
+    $this->load->model('participant');
   }
 
   public function index()
@@ -22,9 +23,10 @@ class Attendance extends CI_Controller {
       'eventId' => $eventId
     );
     $data = array();
-    $data['event'] = $this->event->get_by_id($eventId);
+    $data['currentEvent'] = $this->event->get_by_id($eventId);
     $data['participant'] = $this->participant->get_by_id($participantId);
     $data['talks'] = $this->talk->find($query);
+    $data['states'] = $this->state->get_all();
     $this->load->view('attendance', $data);
   }
 }
