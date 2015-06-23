@@ -85,5 +85,11 @@ function($urlRouterProvider, $stateProvider) {
     templateUrl: path + '/qrcode/index.html',
     controller: 'QrcodeController'
   });
+
+  $stateProvider.state('events.detail.reports', {
+    url: '/reports',
+    templateUrl: path + '/reports/index.html',
+    controller: 'ReportsController'
+  });
 }
 ]);

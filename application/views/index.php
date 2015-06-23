@@ -32,6 +32,7 @@
 		<script src="./public/services/store.js"></script>
 		<script src="./public/services/global.js"></script>
 		<script src="./public/services/states.js"></script>
+		<script src="./public/services/reports.js"></script>
 		<script src="./public/services/session.js"></script>
 		<script src="./public/services/participants.js"></script>
 
@@ -43,6 +44,7 @@
 		<script src="./public/controllers/events/events.js"></script>
 		<script src="./public/controllers/events/detail.js"></script>
 		<script src="./public/controllers/events/create.js"></script>
+		<script src="./public/controllers/events/reports.js"></script>
 		<script src="./public/controllers/session/sessions.js"></script>
 		<script src="./public/controllers/events/participants.js"></script>
 

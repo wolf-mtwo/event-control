@@ -1,0 +1,25 @@
+<h1>Reportes</h1>
+<table class="table table-hover">
+  <tr>
+    <th>
+      Nombre
+    </th>
+    <th ng-repeat="talk in talks">
+      {{talk.title}}
+    </th>
+    <th>
+      TOTAL
+    </th>
+  </tr>
+  <tr ng-repeat="participant in participants">
+    <td>
+      {{participant.first_name}} {{participant.last_name}}
+    </td>
+    <td ng-repeat="att in buildAtts(participant) track by $index">
+      {{att}}
+    </td>
+    <td>
+      {{(count(participant))}}
+    </td>
+  </tr>
+</table>
