@@ -6,6 +6,7 @@ angular.module('seedApp').factory('Participants', ['$resource',
     return $resource(url, {
     }, {
       update: {
+        url: url + 'participantId/:id',
         method: 'PUT'
       },
       save: {

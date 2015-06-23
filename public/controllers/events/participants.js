@@ -52,6 +52,16 @@ angular.module('seedApp')
       });
     }
 
+    $scope.update = function(item) {
+      var itemParams = {
+        eventId: $state.params.id,
+        id: $state.params.participantId
+      };
+      item.$update(itemParams, function(response) {
+        $state.go('events.detail.participants');
+      });
+    }
+
     $scope.upload = function(files) {
       var count = 0;
       if (files && files.length) {

@@ -72,6 +72,12 @@ class Events extends Master_Controller
     $this->save_model('participant', $params);
   }
 
+  function participant_put()
+  {
+    $params = array('eventId');
+    $this->update('participant', $params);
+  }
+
   function participant_delete()
   {
     $this->remove('participant', 'participantId');

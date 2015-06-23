@@ -63,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `event` (
 
 CREATE TABLE IF NOT EXISTS `participant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
   `eventId` int(11) NOT NULL,
   `first_name` varchar(25) NOT NULL,

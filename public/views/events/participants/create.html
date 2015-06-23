@@ -6,18 +6,25 @@
 <div class="space-create">
   <form ng-submit="create(item)">
     <div class="form-group">
+      <label>Identificador unico</label>
+      <input type="text"
+          class="form-control"
+          ng-model="item.uid"
+          placeholder="Identificador unico">
+    </div>
+    <div class="form-group">
       <label>Nombre</label>
       <input type="text"
           class="form-control"
           ng-model="item.first_name"
-          placeholder="first_name">
+          placeholder="Nombre">
     </div>
     <div class="form-group">
       <label>Apellido</label>
       <input type="text"
           class="form-control"
           ng-model="item.last_name"
-          placeholder="last_name">
+          placeholder="Apellido">
     </div>
     <div class="form-group">
       <label>Numero de celular</label>

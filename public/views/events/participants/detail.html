@@ -3,27 +3,67 @@
   width: 100%;
   padding: 20px 0px;
 }
+.input-group {
+  margin-bottom: 10px;
+}
 </style>
 <div class="row">
-  <div class="col-sm-6 col-md-3" ng-init="loadParticipant()">
+  <div class="col-sm-3 col-md-3" ng-init="loadParticipant()">
     <div>
       <img src="./public/assets/img/store/{{participant.image}}"
           class="img-rounded img-detail-participant">
     </div>
-    <div>
-      <button class="btn btn-info" ui-sref="events.detail.participants">Actualizar</button>
-      <button class="btn btn-danger" ng-click="remove(participant)">Eliminar</button>
-    </div>
+
   </div>
   <div class="col-sm-6 col-md-8">
     <div class='container-fluid'>
-      <h4>detalle del participante</h4>
-      <pre><b>first_name</b> {{participant.first_name}}</pre>
-      <pre><b>last_name:</b>{{participant.last_name}}</pre>
-      <pre><b>cel:</b>{{participant.cel}}</pre>
-      <pre><b>ci:</b>{{participant.ci}}</pre>
-      <pre><b>address:</b>{{participant.address}}</pre>
-      <pre><b>email:</b>{{participant.email}}</pre>
+      <h4>Participante</h4>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">first_name</span>
+        <input type="text"
+               class="form-control"
+               ng-model="participant.first_name"
+               placeholder="first_name" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">last_name</span>
+        <input type="text"
+               class="form-control"
+               ng-model="participant.last_name"
+               placeholder="last_name" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">cel</span>
+        <input type="text"
+               class="form-control"
+               ng-model="participant.cel"
+               placeholder="cel" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">ci</span>
+        <input type="text"
+               class="form-control"
+               ng-model="participant.ci"
+               placeholder="ci" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">address</span>
+        <input type="text"
+               class="form-control"
+               ng-model="participant.address"
+               placeholder="address" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">email</span>
+        <input type="text"
+               class="form-control"
+               ng-model="participant.email"
+               placeholder="email" aria-describedby="basic-addon1">
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-info" ng-click="update(participant)">Actualizar</button>
+      <button class="btn btn-danger" ng-click="remove(participant)">Eliminar</button>
     </div>
   </div>
 </div>

@@ -14,9 +14,11 @@
     <h1>{{event.title}}
       <small>
         Subtitulo no disponible
-        <h6 class="label label-danger" ng-click="removeEvent(event)">
+        <a class="btn btn-danger"
+           role="button"
+           ng-click="removeEvent(event)">
           Eliminar
-        </h6>
+        </a>
       </small>
     </h1>
   </div>

@@ -2,7 +2,8 @@
 <div ui-view>
   <div>
     <a class="btn btn-primary"
-    ui-sref="events.detail.talks.create">
+       role="button"
+       ui-sref="events.detail.talks.create">
       Crear charla
     </a>
   </div>
@@ -11,7 +12,9 @@
   <div class="col-sm-6 col-md-4" ng-repeat="talk in talks">
     <div class="caption">
       <h3>
-        {{talk.title}}
+        <a ui-sref="events.detail.talksdetail({talkId: talk.id})">
+          {{talk.title}}
+        </a>
       </h3>
       <p>
         rhoncus a turpis elementum amet nec augue! Por
@@ -21,11 +24,6 @@
           role="button"
           ui-sref="talk.detail({talkId: talk.id, eventId: params.id})">
           Asistencia
-        </a>
-        <a class="btn btn-primary"
-          role="button"
-          ui-sref="events.detail.talksdetail({talkId: talk.id})">
-          Detalle
         </a>
       </p>
     </div>
