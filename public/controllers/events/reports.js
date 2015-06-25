@@ -7,7 +7,8 @@ angular.module('seedApp')
   'Global',
   'Reports',
   'Talks',
-  function($scope, $state, Global, Reports, Talks) {
+  'States',
+  function($scope, $state, Global, Reports, Talks, States) {
     $scope.talks = [];
     $scope.participants = [];
     var reportParams = {
@@ -17,6 +18,10 @@ angular.module('seedApp')
     var itemParams = {
       eventId: $state.params.id
     };
+
+    States.query(function(response) {
+      $scope.states = response;
+    });
 
     Talks.query(itemParams, function(response) {
       $scope.talks = response;
@@ -53,6 +58,17 @@ angular.module('seedApp')
         }
       });
       return result;
+    }
+
+    // TODO: copy from taks controller
+    $scope.getState = function(stateId) {
+      var userState = null;
+      $scope.states.forEach(function(state) {
+        if (state.id == stateId) {
+          userState = state.title;
+        }
+      });
+      return userState;
     }
   }
 ]);

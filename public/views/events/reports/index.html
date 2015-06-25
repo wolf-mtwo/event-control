@@ -16,7 +16,7 @@
       {{participant.first_name}} {{participant.last_name}}
     </td>
     <td ng-repeat="att in buildAtts(participant) track by $index">
-      {{att}}
+      {{getState(att)}}
     </td>
     <td>
       {{(count(participant))}}
